@@ -1,17 +1,16 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"; // "When" buraya eklendi
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('kullanici ana sayfayi acar', () => {
   cy.visit('/'); 
 });
 
-// EKSİK OLAN VE ŞİMDİ EKLEDİĞİMİZ ADIM
 When('sayfa yuklenir', () => {
-  // Bu adımda özel bir şey yapmamıza gerek yok,
-  // sayfanın yüklenmesini bekleyelim
-  cy.wait(500); // 500 milisaniye bekle
+  cy.wait(1000); // Burayı 1 saniye yaptım
 });
 
 Then('kullanici blog yazilarinin listesini gorur', () => {
-  // Testin BAŞARISIZ olmasını istediğimiz nokta bu!
   cy.get('.blog-listesi').should('be.visible');
+  
+  // VİDEODA GÖRÜNMESİ İÇİN 2 SANİYE BEKLE
+  cy.wait(2000); 
 });

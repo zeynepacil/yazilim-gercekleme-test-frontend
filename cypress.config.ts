@@ -5,6 +5,7 @@ import { createEsbuildPlugin } from "@badeball/cypress-cucumber-preprocessor/esb
 
 export default defineConfig({
   e2e: {
+    video: true,
     // Next.js projemizin ana adresi
     // (Next.js'i 'npm run dev' ile çalıştırdığımızda bu adreste açılır)
     baseUrl: "http://localhost:3000", 
